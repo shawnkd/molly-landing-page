@@ -2,10 +2,11 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 // import {useRef} from 'react';
-import Typist from 'react-typist';
+//@ts-ignore
+import Typist from "react-typist"
 import {useState} from 'react';
 import { useMoralis } from "react-moralis";
-import Room from './room';
+import Room from './Room';
 
 // import './room.scss';
 

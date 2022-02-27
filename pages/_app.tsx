@@ -1,13 +1,14 @@
 import '../styles/globals.css'
-// import type { AppProps } from 'next/app'
+import type { AppProps } from 'next/app'
 import './room.scss';
 import './header.css';
 import { MoralisProvider } from "react-moralis";
 
 
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }: AppProps) {
   return (
+    //@ts-ignore
     <MoralisProvider appId={process.env.NEXT_PUBLIC_MORALIS_APP_ID}
     serverUrl={process.env.NEXT_PUBLIC_MORALIS_SERVER_ID}
   >
