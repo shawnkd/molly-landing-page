@@ -44,7 +44,7 @@ const [currentTextCounter, setCurrentTextCounter] = useState(0);
       </Head>
 
       <div className="mb-48">
-      {!isMobile ?
+      {browserName === 'Safari'  ?
       <div>
         <div className=" hero-container flex font-sans font-bold justify-center ">
                     <div className="environment"></div>
