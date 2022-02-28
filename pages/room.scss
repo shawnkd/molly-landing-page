@@ -74,8 +74,8 @@ $cuadro-2: #0F1110;
 
     animation: #{$animation} #{$time} infinite ease;
 
-    @keyframes #{$animation} {
-        0%, 15%, 45%, 60%, 62%, 68%{
+    @-webkit-keyframes #{$animation} {
+        0%, 15%, 45%, 60%, 62%, 68%, 100%{
             @if $side == "cube-front" { @include cube-front($width-el, $height-el, $depth-el); }
             @else if $side == "cube-back" { @include cube-back($width-el, $height-el, $depth-el); }
             @else if $side == "cube-right" { @include cube-right($width-el, $height-el, $depth-el); }
@@ -128,7 +128,9 @@ body{
 		rotateZ(45deg)
         translateZ(-9vw)
         
-	;
+        
+    ;
+    
 
 }
 .h-shadow{
@@ -434,7 +436,7 @@ body{
         }
     }
     &__left{ background-color: $white-1; }
-    // &__top{ background-color: $white-1; }
+    &__top{ background-color: $white-1; }
     &__bottom{ background-color: $white-3; }
 }
     .blt2{
@@ -1518,10 +1520,10 @@ body{
 }
 /**********************/
 /**********************/
-@keyframes pantalla-tablet {
+@-webkit-keyframes pantalla-tablet {
     from{ background-color: lighten($neon-1, 5); }
 }
-@keyframes pantalla-tv{
+@-webkit-keyframes pantalla-tv{
     from{
         background-color: lighten($neon-1, 5);
         box-shadow:
@@ -1532,7 +1534,7 @@ body{
         ;
     }
 }
-@keyframes luz-tv{
+@-webkit-keyframes luz-tv{
     from{
         background-image: radial-gradient(rgba(darken($neon-2, 5), .8), rgba(darken($neon-1, 5), .8));
     }

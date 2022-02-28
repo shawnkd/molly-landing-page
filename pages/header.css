@@ -115,7 +115,7 @@ body {
     animation: paths 5s step-end infinite;
   }
   
-  @keyframes paths {
+  @-webkit-keyframes paths {
     0% {
       clip-path: polygon(
         0% 43%,
@@ -356,13 +356,18 @@ body {
         38% 62%
       );
     }
+
+    100% {
+        
+      }
   
     1%,
     7%,
     33%,
     47%,
     78%,
-    93% {
+    93%,
+    100% {
       clip-path: none;
     }
   }
@@ -373,7 +378,7 @@ body {
     animation: movement 8s step-end infinite;
   }
   
-  @keyframes movement {
+  @-webkit-keyframes movement {
     0% {
       top: 0px;
       left: -20px;
@@ -404,7 +409,7 @@ body {
     animation: opacity 5s step-end infinite;
   }
   
-  @keyframes opacity {
+  @-webkit-keyframes opacity {
     0% {
       opacity: 0.1;
     }
@@ -428,13 +433,18 @@ body {
     90% {
       opacity: 0.8;
     }
+
+    100% {
+        opacity: 0.8;
+      }
   
     1%,
     7%,
     33%,
     47%,
     78%,
-    93% {
+    93%,
+    100% {
       opacity: 0;
     }
   }
@@ -443,7 +453,7 @@ body {
     animation: font 7s step-end infinite;
   }
   
-  @keyframes font {
+  @-webkit-keyframes font {
     0% {
       font-weight: 100;
       color: #e0287d;
@@ -473,6 +483,8 @@ body {
       color: #e0287d;
       filter: blur(6px);
     }
+
+   
   }
   
   .glitch span {
