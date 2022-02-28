@@ -19,7 +19,7 @@ const Home: NextPage = () => {
 
 */
 
-const { authenticate, isAuthenticated, user, logout} = useMoralis();
+const { authenticate, isAuthenticated, user, logout, isWeb3Enabled} = useMoralis();
 
 
 const truncateAddress = (address: any) => {
@@ -51,14 +51,41 @@ const [currentTextCounter, setCurrentTextCounter] = useState(0);
   <h1  className=" flex  flex-row gap-1   font-sans text-2xl">collect your favorite {<Typist  loop className=" flex flex-row font-bold text-sky-400 ">{texts.map((item,index) => (<div key={index}>{texts[index] ? <div> <Typist.Backspace count={20} delay={250} />{texts[index]}</div> : null}</div>))}</Typist>}</h1>
       </div>
       <span >
-      <div className=" flex h-80 justify-center -mt-  pb-24">
+      <div className=" flex h-80 justify-center   pb-24">
         {!isAuthenticated ? 
-        <span className="mt-24">
-            <button onClick={()=> authenticate({provider: "metamask"})} className=" shadow-lg shadow-blue-500/50 relative inline-flex items-center justify-center px-10 py-4 overflow-hidden font-sans font-bold tracking-tighter text-white bg-blue-900 rounded-lg group">
+        <span className="mt-4 flex flex-col h-14 gap-5">
+              <div className="p-4 max-w-sm bg-white rounded-lg border shadow-md sm:p-6 dark:bg-gray-800 dark:border-gray-700">
+              <ul className="m-4 justify-center flex flex-col space-y-3">
+
+          <h1 className="text-lg text-center text-white -mt-4 mb-2 font-bold font-sans">connect to wallet</h1>
+            <button onClick={()=> {
+               authenticate({provider: "metamask"})
+               }
+               } className=" shadow-lg shadow-blue-500/50 relative inline-flex items-center justify-center px-10 py-4 overflow-hidden font-sans font-bold tracking-tighter text-white bg-orange-600 rounded-lg group">
+
                 <span className="absolute w-0 h-0 transition-all duration-500 ease-out bg-blue-800 rounded-full group-hover:w-56 group-hover:h-56"></span>
                 <span className="absolute inset-0 w-full h-full -mt-1 rounded-lg opacity-30 bg-gradient-to-b from-transparent via-transparent to-gray-700"></span>
-                <span className="relative  ">Connect Wallet</span>
+                <span className="relative text-black  ">metamask</span>
             </button>
+            <button onClick={()=> 
+                authenticate({provider: "walletconnect"})
+              } className="shadow-lg shadow-blue-500/50 relative inline-flex items-center justify-center px-10 py-4 overflow-hidden font-sans font-bold tracking-tighter text-white bg-sky-600 rounded-lg group">
+                
+                <span className="absolute w-0 h-0 transition-all duration-500 ease-out bg-blue-800 rounded-full group-hover:w-56 group-hover:h-56"></span>
+                <span className="absolute inset-0 w-full h-full -mt-1 rounded-lg opacity-30 bg-gradient-to-b from-transparent via-transparent to-gray-700"></span>
+                <span className="relative  ">walletconnect</span>
+            </button>
+            {/* <button onClick={()=> 
+                authenticate({type: "sol"})
+              } className="shadow-lg shadow-blue-500/50 relative inline-flex items-center justify-center px-10 py-4 overflow-hidden font-sans font-bold tracking-tighter text-white bg-purple-900 rounded-lg group">
+                <span className="absolute w-0 h-0 transition-all duration-500 ease-out bg-blue-800 rounded-full group-hover:w-56 group-hover:h-56"></span>
+                <span className="absolute inset-0 w-full h-full -mt-1 rounded-lg opacity-30 bg-gradient-to-b from-transparent via-transparent to-gray-700"></span>
+                <span className="relative  ">phantom</span>
+            </button> */}
+            </ul>
+</div>
+            
+            
       </span>
       : <span className=" justify-center   ">
         {/* <a href="#" className="  mb-20 bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"> */}
@@ -86,6 +113,7 @@ const [currentTextCounter, setCurrentTextCounter] = useState(0);
         }
         
       </div>
+      
       </span>
 
       </div>
