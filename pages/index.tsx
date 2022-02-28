@@ -44,7 +44,7 @@ const [currentTextCounter, setCurrentTextCounter] = useState(0);
       </Head>
 
       <div className="mb-48">
-      {isMobile ?
+      {!isMobile ?
       <div>
         <div className=" hero-container flex font-sans font-bold justify-center ">
                     <div className="environment"></div>
@@ -115,7 +115,7 @@ const [currentTextCounter, setCurrentTextCounter] = useState(0);
         <h2 className="flex text-xl text-black font-sans justify-center  pt-5 ">join the discord to be notified when we launch...</h2>
 
         
-        <a href="https://discord.gg/n8g4yAksav" target="_blank"  onClick={()=> console.log("discord inv")} className=" flex flex-row mt-7 shadow-lg shadow-blue-500/50  inline-flex items-center justify-center px-10 py-4 overflow-hidden font-sans font-bold tracking-tighter text-white bg-discord-purple rounded-lg group">
+        <a href="https://discord.gg/n8g4yAksav" target="_blank"  onClick={()=> console.log("discord inv")} className=" flex  flex-row mt-7 shadow-lg shadow-blue-500/50  inline-flex items-center justify-center px-10 py-4 overflow-hidden font-sans font-bold tracking-tighter text-white bg-discord-purple rounded-lg group">
           <span className="absolute w-0 h-0 transition-all duration-500 ease-out bg-gray-900 rounded-full group-hover:w-56 group-hover:h-56"></span>
           <span className="absolute inset-0 w-full h-full -mt-1 rounded-lg opacity-30 bg-gradient-to-b from-transparent via-transparent to-gray-700"></span>
           <span className="relative ">Discord</span>
