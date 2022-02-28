@@ -138,11 +138,9 @@ const [currentTextCounter, setCurrentTextCounter] = useState(0);
       </div>
 
       <main className="flex w-full -mt-8 flex-col items-center justify-center   ">
-        {!isMobile ?
-        <video className="h-72" loop  autoPlay src="/room.mov"></video> 
-      : 
+        
       <Room/>
-        }
+        
       </main>
       
       <footer className="flex mt-96  w-full items-center justify-center ">
