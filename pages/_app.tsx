@@ -1,7 +1,7 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
-import './room.scss';
 import './header.css';
+import './room.scss';
 import { MoralisProvider } from "react-moralis";
 
 

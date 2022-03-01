@@ -107,6 +107,7 @@ body{
     align-items: center;
     padding-top: 50vh;
 
+
     width: 100%;
     height: 100vh;
     overflow: scroll;
@@ -513,8 +514,8 @@ body{
     }
     &__back{ background-color: $white-3; }
     &__right{ background-image: linear-gradient(to bottom, darken($white-4, 10), darken($white-3, 20) 80%, darken($white-4, 10)); }
-    // &__left{ background-color: $white-2; }
-    // &__top{ background-color: $white-1; }
+    &__left{ background-color: $white-2; }
+    &__top{ background-color: $white-1; }
     &__bottom{ background-color: $white-3; }
 }
     .blb2{
@@ -1127,11 +1128,11 @@ body{
                 ;
             }
         }
-        // &__back{ background-color: $white-3; }
-        // &__right{ background-color: $white-3; }
-        // &__left{ background-color: $white-2; }
-        // &__top{ background-color: $white-1; }
-        // &__bottom{ background-color: $white-3; }
+        &__back{ background-color: $white-3; }
+        &__right{ background-color: $white-3; }
+        &__left{ background-color: $white-2; }
+        &__top{ background-color: $white-1; }
+        &__bottom{ background-color: $white-3; }
     }
     .puerta-l,
     .puerta-r{
@@ -1150,7 +1151,7 @@ body{
         &__back{ background-color: $black-3; }
         &__right{ background-color: $black-3; }
         &__left{ background-color: $black-2; }
-        // &__top{ background-color: $white-1; }
+        &__top{ background-color: $white-1; }
         &__bottom{ background-color: $black-3; }
     }
     .puerta-r{ left: calc(100% - .5vw); }

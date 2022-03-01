@@ -48,7 +48,7 @@ const [currentTextCounter, setCurrentTextCounter] = useState(0);
       <div>
         <div className=" hero-container flex font-sans font-bold justify-center ">
                     <div className="environment"></div>
-                    <h2 className="hero glitch layers" data-text="사이퍼"><span>molly</span></h2>
+                    <h2 className="hero glitch layers " data-text="사이퍼"><span>molly</span></h2>
       </div>
       <div className=" mb-10 flex content-between justify-center align-left items-center w-screen  ">
   <h1  className=" flex  flex-row gap-1   font-sans text-2xl">collect your favorite {<Typist  loop className=" flex flex-row font-bold text-sky-400 ">{texts.map((item,index) => (<div key={index}>{texts[index] ? <div> <Typist.Backspace count={20} delay={250} />{texts[index]}</div> : null}</div>))}</Typist>}</h1>
@@ -58,7 +58,7 @@ const [currentTextCounter, setCurrentTextCounter] = useState(0);
       <div>
         <div className=" hero-container flex font-sans font-bold justify-center ">
                     <div className="environment"></div>
-                    <h2 className="hero " data-text="사이퍼"><span>molly</span></h2>
+                    <h2 className="hero glitch layers " data-text="사이퍼"><span className="">molly</span></h2>
       </div>
       <div className=" mb-10 flex content-between justify-center align-left items-center w-screen  ">
   <h1  className=" flex  flex-row gap-1   font-sans text-2xl">collect your favorite {<Typist  loop className=" flex flex-row font-bold text-sky-400 ">{texts.map((item,index) => (<div key={index}>{texts[index] ? <div> <Typist.Backspace count={20} delay={250} />{texts[index]}</div> : null}</div>))}</Typist>}</h1>

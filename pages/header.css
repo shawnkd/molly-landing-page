@@ -1,6 +1,6 @@
 body {
     color: #ccc;
-    background: #111;
+    /* background: #111; */
     font-family: sans-serif;
   }
   
@@ -115,7 +115,7 @@ body {
     animation: paths 5s step-end infinite;
   }
   
-  @-webkit-keyframes paths {
+  @keyframes paths {
     0% {
       clip-path: polygon(
         0% 43%,
@@ -409,7 +409,7 @@ body {
     animation: opacity 5s step-end infinite;
   }
   
-  @-webkit-keyframes opacity {
+  @keyframes opacity {
     0% {
       opacity: 0.1;
     }
@@ -453,7 +453,7 @@ body {
     animation: font 7s step-end infinite;
   }
   
-  @-webkit-keyframes font {
+  @keyframes font {
     0% {
       font-weight: 100;
       color: #e0287d;
