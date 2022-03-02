@@ -27,6 +27,8 @@ const truncateAddress = (address: any) => {
   return address.slice(0, 6) + "..." + address.slice(-4);
 };
 
+const [openedModal, setOpenedModal] = useState(false);
+
 
 
 
@@ -61,7 +63,7 @@ const [currentTextCounter, setCurrentTextCounter] = useState(0);
 
 
       <div className="mb-48">
-      {browserName === 'Safari'  ?
+      
       <div>
         <div className=" hero-container flex font-sans font-bold justify-center ">
                     <div className="environment"></div>
@@ -71,18 +73,7 @@ const [currentTextCounter, setCurrentTextCounter] = useState(0);
   <h1  className=" flex  flex-row gap-1   font-sans text-2xl">collect your favorite {<Typist  loop className=" flex flex-row font-bold text-sky-400 ">{texts.map((item,index) => (<div key={index}>{texts[index] ? <div> <Typist.Backspace count={20} delay={250} />{texts[index]}</div> : null}</div>))}</Typist>}</h1>
       </div>
       </div>
-      :
-      <div>
-        <div className=" hero-container flex font-sans font-bold justify-center ">
-                    <div className="environment"></div>
-                    <h2 className="hero glitch layers " data-text="사이퍼"><span className="">molly</span></h2>
-      </div>
-      <div className=" mb-10 flex content-between justify-center align-left items-center w-screen  ">
-  <h1  className=" flex  flex-row gap-1   font-sans text-2xl">collect your favorite {<Typist  loop className=" flex flex-row font-bold text-sky-400 ">{texts.map((item,index) => (<div key={index}>{texts[index] ? <div> <Typist.Backspace count={20} delay={250} />{texts[index]}</div> : null}</div>))}</Typist>}</h1>
-      </div>
-      </div>
       
-  }
 
       
       <span >
@@ -103,9 +94,11 @@ const [currentTextCounter, setCurrentTextCounter] = useState(0);
                 <span className="absolute inset-0 w-full h-full -mt-1 rounded-lg opacity-30 bg-gradient-to-b from-transparent via-transparent to-gray-700"></span>
                 <span className="relative text-black  ">metamask</span>
             </button>
-            <button onClick={()=> 
+            <button onClick={()=> {
                 authenticate({provider: "walletconnect"})
-              } className="shadow-lg shadow-blue-500/50 relative inline-flex items-center justify-center px-10 py-4 overflow-hidden font-sans font-bold tracking-tighter text-white bg-sky-600 rounded-lg group">
+                setOpenedModal(true)
+            }
+              } className=" z-2 shadow-lg shadow-blue-500/50 relative inline-flex items-center justify-center px-10 py-4 overflow-hidden font-sans font-bold tracking-tighter text-white bg-sky-600 rounded-lg group">
                 
                 <span className="absolute w-0 h-0 transition-all duration-500 ease-out bg-blue-800 rounded-full group-hover:w-56 group-hover:h-56"></span>
                 <span className="absolute inset-0 w-full h-full -mt-1 rounded-lg opacity-30 bg-gradient-to-b from-transparent via-transparent to-gray-700"></span>
@@ -125,7 +118,7 @@ const [currentTextCounter, setCurrentTextCounter] = useState(0);
       </span>
       : <span className=" justify-center   ">
         {/* <a href="#" className="  mb-20 bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"> */}
-        <span className="text-center block p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md  ">
+        <span className="text-center  block p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md  ">
 
         <h1 className="flex text-xl text-black font-sans glitch justify-left ">welcome, &nbsp; {<div className="font-bold text-sky-400 ">{truncateAddress(user?.get("ethAddress"))}</div>}! </h1>
         <h2 className="flex text-black text-xl pt-5 font-bold font-sans justify-center ">we're launching our beta soon.</h2>
@@ -138,11 +131,11 @@ const [currentTextCounter, setCurrentTextCounter] = useState(0);
           <span className="relative ">Discord</span>
       </a>
       
-        <button onClick={()=> logout()} className="flex flex-row ml-4 mt-7 shadow-lg shadow-blue-500/50 relative inline-flex items-center justify-center px-10 py-4 overflow-hidden font-sans font-bold tracking-tighter text-white bg-blue-800 rounded-lg group">
-          <span className="absolute w-0 h-0 transition-all duration-500 ease-out bg-black rounded-full group-hover:w-56 group-hover:h-56"></span>
+      <a onClick={()=> logout()} target="_blank"  className="ml-4 flex  flex-row mt-7 shadow-lg shadow-blue-500/50  inline-flex items-center justify-center px-10 py-4 overflow-hidden font-sans font-bold tracking-tighter text-white bg-blue-800 rounded-lg group">
+          <span className="absolute w-0 h-0 transition-all duration-500 ease-out bg-gray-900 rounded-full group-hover:w-56 group-hover:h-56"></span>
           <span className="absolute inset-0 w-full h-full -mt-1 rounded-lg opacity-30 bg-gradient-to-b from-transparent via-transparent to-gray-700"></span>
-          <span className="relative  ">Log Out</span>
-      </button>
+          <span className="relative ">Log Out</span>
+      </a>
       
         </span>
         </span>
