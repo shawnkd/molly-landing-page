@@ -43,6 +43,23 @@ const [currentTextCounter, setCurrentTextCounter] = useState(0);
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <meta
+          key="description"
+          name="description"
+          content="collect your favorite game clips as NFTs"
+        />
+
+        <meta key="twitter:card" name="twitter:card" content="app" />
+        <meta key="twitter:title" name="twitter:title" content="molly" />
+        <meta key="twitter:url" name="twitter:url" content="https://molly.so" />
+
+        <meta
+          key="twitter:description"
+          name="twitter:description"
+          content="collect your favorite game clips as NFTs"
+        />
+
+
       <div className="mb-48">
       {browserName === 'Safari'  ?
       <div>

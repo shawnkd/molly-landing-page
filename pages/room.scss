@@ -37,12 +37,14 @@ $cuadro-2: #0F1110;
     height: $height;
     transform-origin: bottom left;
     transform: rotateX(-90deg) translateZ( -($height - ($depth * 2) ) );
+    
 }
 @mixin cube-back($width, $height, $depth) {
     width: $width;
     height: $height;
     transform-origin: top left;
     transform: rotateX(-90deg) rotateY(180deg) translateX(-$width) translateY(-$height) ;
+    
 }
 @mixin cube-right($width, $height, $depth) {
     width: $depth * 2;
@@ -74,7 +76,7 @@ $cuadro-2: #0F1110;
 
     animation: #{$animation} #{$time} infinite ease;
 
-    @-webkit-keyframes #{$animation} {
+    @keyframes #{$animation} {
         0%, 15%, 45%, 60%, 62%, 68%, 100%{
             @if $side == "cube-front" { @include cube-front($width-el, $height-el, $depth-el); }
             @else if $side == "cube-back" { @include cube-back($width-el, $height-el, $depth-el); }
@@ -99,6 +101,8 @@ $cuadro-2: #0F1110;
 	user-select: none;
     transform-style: preserve-3d;
     -webkit-tap-highlight-color: transparent;
+    z-index: -1;
+    
 }
 /* Generic */
 body{
@@ -110,18 +114,28 @@ body{
 
     width: 100%;
     height: 100vh;
+    
     overflow: scroll;
 	cursor: pointer;
     background-image: radial-gradient(circle, $bg-1, darken($bg-1, 20) );
+    background: cover;
+    
+    
 }
 
-.face{ position: absolute; }
+.face{ position: absolute;
+    
+    
+    
+    
+     }
 
 /***************/
 .house{
 	position: absolute;
     width: 28vw;
     height: 28vw;
+    
 
 	transform:
 		perspective(1250px)
@@ -131,6 +145,7 @@ body{
         
         
     ;
+    
     
 
 }
@@ -249,6 +264,7 @@ body{
     width: 27vw;
     height: 27vw;
 
+    
     &__front{ background-color: $white-2; }
     &__back{ background-color: $white-3; }
     &__right{ background-color: $white-3; }
@@ -565,6 +581,7 @@ body{
     bottom: 5.25vw;
     width: .75vw;
     height: 1.5vw;
+    
 
     transform: translateZ(8vw);
 
@@ -632,6 +649,7 @@ body{
     $width-el: 1.5vw;
     $height-el: .25vw;
     $depth-el: 5vw;
+    
 
     @include cube($width-el, $height-el, $depth-el);
     position: absolute;
@@ -639,6 +657,7 @@ body{
     top: 9vw;
     width: 1.5vw;
     height: 10vw;
+    
 
     transform: translateZ(16vw);
 
@@ -679,6 +698,7 @@ body{
     top: 8vw;
     width: .5vw;
     height: 12vw;
+    
 
     transform: translateZ(8vw);
 
@@ -1521,10 +1541,10 @@ body{
 }
 /**********************/
 /**********************/
-@-webkit-keyframes pantalla-tablet {
+@keyframes pantalla-tablet {
     from{ background-color: lighten($neon-1, 5); }
 }
-@-webkit-keyframes pantalla-tv{
+@keyframes pantalla-tv{
     from{
         background-color: lighten($neon-1, 5);
         box-shadow:
@@ -1535,7 +1555,7 @@ body{
         ;
     }
 }
-@-webkit-keyframes luz-tv{
+@keyframes luz-tv{
     from{
         background-image: radial-gradient(rgba(darken($neon-2, 5), .8), rgba(darken($neon-1, 5), .8));
     }

@@ -378,7 +378,7 @@ body {
     animation: movement 8s step-end infinite;
   }
   
-  @-webkit-keyframes movement {
+  @keyframes movement {
     0% {
       top: 0px;
       left: -20px;
